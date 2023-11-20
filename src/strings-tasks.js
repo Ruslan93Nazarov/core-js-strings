@@ -340,8 +340,10 @@ function countVowels(str) {
  *   isPalindrome('apple') => false
  *   isPalindrome('No lemon, no melon') => true
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  const deleteComma = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  return deleteComma === deleteComma.split('').reverse().join('');
 }
 
 /**
@@ -370,8 +372,13 @@ function findLongestWord(sentence) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  return str
+    .split(' ')
+    .map((word) => {
+      return word.split('').reverse().join('');
+    })
+    .join(' ');
 }
 
 /**
